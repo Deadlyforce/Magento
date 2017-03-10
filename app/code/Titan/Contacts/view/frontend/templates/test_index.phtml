@@ -1,0 +1,48 @@
+<div id="contactslist">
+    <h2>Empty</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $contacts = $this->getData('contacts');
+                
+                foreach($contacts as $contact){
+                    ?>
+                    <tr><td><?php echo $contact; ?></td></tr>
+                    <?php
+                }
+            ?>
+            <tr>
+                <td>There is no contact in this list.</td>
+            </tr>
+        </tbody>        
+    </table>
+    
+    <h2>10 éléments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $this->addContacts(10);
+                $contacts = $this->getData('contacts');
+                
+                foreach($contacts as $contact){
+                    ?>
+                    <tr><td><?php echo $contact; ?></td></tr>
+                    <?php
+                }
+            ?>
+            <tr>
+                <td>There is no contact in this list.</td>
+            </tr>
+        </tbody>        
+    </table>
+</div>

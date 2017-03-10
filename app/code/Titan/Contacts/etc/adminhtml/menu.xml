@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Titan_Contacts" title="Titan Corp. Contacts" module="Titan_Contacts" sortOrder="20" dependsOnModule="Titan_Contacts" resource="Titan_Contacts::contacts"/>
+        <add id="Titan_Contacts::index" title="Titan Contacts" module="Titan_Contacts" action="contacts/test/index" parent="Titan_Contacts" sortOrder="20" dependsOnModule="Titan_Contacts" resource="Titan_Contacts::contacts"/>
+    </menu>
+</config>
+
