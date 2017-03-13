@@ -37,11 +37,9 @@ class ContactsActions extends Column
      * @return array
      */
     public function prepareDataSource(array $dataSource)
-    {
-        $items = $dataSource['data']['items'];
-        
-        if (isset($items)) {
-            foreach ($items as &$item) {
+    {        
+        if (isset($dataSource['data']['items'])) {
+            foreach ($dataSource['data']['items'] as &$item) {
                 
                 $item[$this->getData('name')]['edit'] = [
                     'href' => $this->urlBuilder->getUrl(
