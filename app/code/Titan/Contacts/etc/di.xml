@@ -32,5 +32,30 @@
             <argument name="resourceModel" xsi:type="string">Titan\Contacts\Model\ResourceModel\Contact</argument>
         </arguments>
     </virtualType>
-
+    
+    <type name="Magento\Framework\View\TemplateEngineFactory">
+        <arguments>
+            <argument name="engines" xsi:type="array">
+                <item name="twig" xsi:type="string">Titan\Twig\View\TemplateEngine\Twig</item>
+            </argument>
+        </arguments>
+    </type>
+<!--    <type name="Magento\Framework\View\TemplateEngineFactory">
+        <param name="engines">            
+            <array>
+                <value>Titan\Twig\View\TemplateEngine\Twig</value>
+            </array>           
+        </param>
+    </type>-->
+    
+    <!-- Surcharge de classes natives -->
+    
+    <!-- Product Class -->
+    <preference for="Magento\Catalog\Model\Product" type="Titan\Contacts\Model\Product" />    
+    <!-- Product View Block -->
+    <preference for="Magento\Catalog\Block\Product\View" type="Titan\Contacts\Block\Product\View" />
+    <!-- Helper -->
+    <preference for="Magento\Catalog\Helper\Data" type="Titan\Contacts\Helper\Data" />
+    <!-- Action rewrite -->
+    <preference for="Magento\Checkout\Controller\Cart\Index" type="Titan\Contacts\Controller\Cart\Index" />
 </config>

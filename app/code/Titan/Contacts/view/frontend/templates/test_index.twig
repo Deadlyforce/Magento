@@ -1,0 +1,25 @@
+
+{#{{ getContacts() }}#}
+{{ Hello }}
+{#{% set contacts = getContacts() %}#}
+
+
+<div id="contactslist">
+    <h2>Tableau</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#{% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.getName }}</td>
+                    <td>{{ contact.getEmail }}</td>
+                </tr>
+            {% endfor %}#}
+        </tbody>        
+    </table>
+</div>

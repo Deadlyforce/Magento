@@ -5,10 +5,10 @@ namespace Titan\Contacts\Controller\Adminhtml\Test;
 use Magento\Backend\App\Action;
 use Titan\Contact\Model\Contact as Contact;
 
-class newAction extends Action
+class Edit extends Action
 {
     /**
-     * Edit A Contact Page
+     * Page "Edit A Contact"
      *
      * @return \Magento\Backend\Model\View\Result\Page|\Magento\Backend\Model\View\Result\Redirect
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -17,6 +17,8 @@ class newAction extends Action
     {
         $this->_view->loadLayout();
         $this->_view->renderLayout();
+        
+//        die('youpi');
 
         $contactDatas = $this->getRequest()->getParam('contact');
         

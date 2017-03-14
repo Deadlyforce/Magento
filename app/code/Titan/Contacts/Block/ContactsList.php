@@ -4,26 +4,26 @@ namespace Titan\Contacts\Block;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
+use Titan\Contacts\Model\Contact;
+use Magento\Framework\App\ResourceConnection;
 
 class ContactsList extends Template
 {
-    public function __construct( Context $context, array $data = array() ) 
+    private $contact;
+    
+    public function __construct( Context $context, Contact $contact, ResourceConnection $resource, array $data = [] ) 
     {
+        $this->contact = $contact;
+        $this->resource = $resource;
+        
         parent::__construct( $context, $data );
-        $this->setData('contacts', array());
     }
 
-    public function addContacts( $count )
+    public function getContacts()
     {
-        $contacts = $this->getData('contacts');
-        
-        $actualNumber = count($contacts);
-        $names = array();
-        
-        for($i = $actualNumber; $i < ($actualNumber + $count) ; $i++){
-            $contacts[] = 'nom ' . ($i+1);
-        }
-        $this->setData('contacts', $contacts);
+        $contacts = $this->contact->getCollection();
+       
+        return $contacts;       
     }
 }
 

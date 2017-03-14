@@ -1,48 +1,34 @@
+<?php
+$contacts = $this->getContacts();
+?>
+
+
 <div id="contactslist">
     <h2>Empty</h2>
     <table>
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Email</th>
             </tr>
         </thead>
         <tbody>
-            <?php
-                $contacts = $this->getData('contacts');
-                
+            <?php                
                 foreach($contacts as $contact){
                     ?>
-                    <tr><td><?php echo $contact; ?></td></tr>
+                    <tr>
+                        <td><?php echo $contact->getName(); ?></td>
+                        <td><?php echo $contact->getEmail(); ?></td>
+                    </tr>
                     <?php
                 }
             ?>
-            <tr>
-                <td>There is no contact in this list.</td>
-            </tr>
-        </tbody>        
-    </table>
-    
-    <h2>10 éléments</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                $this->addContacts(10);
-                $contacts = $this->getData('contacts');
-                
-                foreach($contacts as $contact){
-                    ?>
-                    <tr><td><?php echo $contact; ?></td></tr>
-                    <?php
-                }
-            ?>
-            <tr>
-                <td>There is no contact in this list.</td>
-            </tr>
+<!--            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.getName }}</td>
+                    <td>{{ contact.getEmail }}</td>
+                </tr>
+            {% endfor %}-->
         </tbody>        
     </table>
 </div>

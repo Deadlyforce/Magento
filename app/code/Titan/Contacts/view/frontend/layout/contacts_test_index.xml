@@ -3,7 +3,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Titan\Contacts\Block\ContactsList" name="contactForm" template="Titan_Contacts::test_index.phtml"></block>
+            <!--<block class="Titan\Contacts\Block\ContactsList" name="test_index" template="Titan_Contacts::test_index.phtml"></block>-->
+            <block class="Titan\Contacts\Block\ContactsList" name="test_index" template="test_index.twig"></block>
         </referenceContainer>
     </body>
 </page>

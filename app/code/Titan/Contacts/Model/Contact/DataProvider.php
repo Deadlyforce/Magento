@@ -1,8 +1,8 @@
 <?php
 namespace Titan\Contacts\Model\Contact;
 
-use Titan\Contacts\Model\ResourceModel\Contact\Collection;
 use Magento\Ui\DataProvider\AbstractDataProvider;
+use Titan\Contacts\Model\ResourceModel\Contact\CollectionFactory;
 
 class DataProvider extends AbstractDataProvider
 {
@@ -10,7 +10,7 @@ class DataProvider extends AbstractDataProvider
      * @param string $name
      * @param string $primaryFieldName
      * @param string $requestFieldName
-     * @param Collection $contactCollection
+     * @param CollectionFactory $contactCollection
      * @param array $meta
      * @param array $data
      */
